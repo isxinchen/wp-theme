@@ -26,7 +26,7 @@
 		<?php else : ?>
 			<form action="<?php bloginfo('home'); ?>" method="get">
 				<div class="content">
-					<input type="text" class="textfield" name="s" size="24" value="<?php echo wp_specialchars($s, 1); ?>" />
+					<input type="text" class="textfield" placeholder="请输入要搜索的内容" name="s" size="24" value="<?php echo wp_specialchars($s, 1); ?>" />
 					<input type="submit" class="button" value="搜索" />
 				</div>
 			</form>

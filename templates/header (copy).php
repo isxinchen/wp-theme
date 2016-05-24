@@ -31,40 +31,40 @@
 <div id="header">
 <!-- wrapper START-->
 <div class="wrapper">
+<!-- searchbox START -->
+<!--
+	<div id="searchbox">
+		<?php if($options['google_cse'] && $options['google_cse_cx']) : ?>
+			<form action="http://www.google.com/cse" method="get">
+				<div class="content">
+					<input type="text" class="textfield" name="q" size="24" />
+					<input type="submit" class="button" name="sa" value="" />
+					<input type="hidden" name="cx" value="<?php echo $options['google_cse_cx']; ?>" />
+					<input type="hidden" name="ie" value="UTF-8" />
+				</div>
+			</form>
+		<?php else : ?>
+			<form action="<?php bloginfo('home'); ?>" method="get">
+				<div class="content">
+					<input type="text" class="textfield" name="s" size="24" value="<?php echo wp_specialchars($s, 1); ?>" />
+					<input type="submit" class="button" value="" />
+				</div>
+			</form>
+		<?php endif; ?>
+	</div>
+-->
+	<!-- searchbox END -->
 
 	<div id="caption">
 		<h1 id="title"><a href="<?php bloginfo('url'); ?>/"><?php bloginfo('name'); ?></a></h1>
 		<div id="tagline"><?php bloginfo('description'); ?></div>
 	</div>
 <!-- navigation START -->
+
 	<!-- menus START -->
-		<?php
-
-		$defaults = array(
-			'theme_location'  => 'primary',
-			'menu'            => '',
-			'container'       => 'div',
-			'container_class' => 'menu-header',
-			'container_id'    => '',
-			'menu_class'      => 'menu',
-			'menu_id'         => '',
-			'echo'            => true,
-			'fallback_cb'     => 'wp_page_menu',
-			'before'          => '',
-			'after'           => '',
-			'link_before'     => '',
-			'link_after'      => '',
-			'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-			'depth'           => 0,
-			'walker'          => ''
-		);
-
-		wp_nav_menu( $defaults );
-
-		?>
+		<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 	
 	<!-- menus END -->
-<!-- navigation END -->
 
 </div>
 <!-- wrap END -->
